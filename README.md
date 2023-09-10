@@ -1,2 +1,24 @@
-# penny_planner
-Penny Planner is a powerful personal finance and budgeting application designed to help individuals take control of their financial lives. This open-source project aims to provide users with a user-friendly and feature-rich tool to manage their income, expenses, savings, and investments seamlessly.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
