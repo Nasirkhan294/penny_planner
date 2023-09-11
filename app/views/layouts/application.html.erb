@@ -11,8 +11,24 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <header>
+      <div class="container">
+        <% if user_signed_in? %>
+          <div class="destroy">
+            <%= link_to 'Logout', destroy_user_session_path, class: "btn logout", data: { turbo_method: :delete } %>
+          </div>
+        <% else %>
+          <div class=register">
+            <%= link_to 'Login', new_user_session_path, class: "btn login" %>
+            <%= link_to 'Sign-up', new_user_registration_path, class: "btn sign-up" %>
+          </div>
+        <% end %>
+      </div>
+    </header>
+    <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </main>
   </body>
 </html>
