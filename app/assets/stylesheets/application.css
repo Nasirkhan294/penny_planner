@@ -1,61 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-size: 16px;
+:root {
+  --primary-color: #351d77;
+  --secondar-color: #ec91c4;
+  --body: #e8f0e4;
+  --white: #fff;
+  --yellow: #e9b14c;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  background-color: var(--body);
 }
 
 header {
-    background-color: #eee4f0;
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-end;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all ease 0.8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all ease 0.8s;
+  width: 15rem;
 }
 
 .login {
-    background-color: #fff;
-    color: #00f;
+  background-color: var(--secondar-color);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .login:hover {
-    background-color: #00f;
-    color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
 .sign-up {
-    background-color: #00f;
-    color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
 .sign-up:hover {
-    background-color: #fff;
-    color: #00f;
+  background-color: var(--secondar-color);
+  color: var(--primary-color);
 }
 
 .logout {
-    background-color: rgb(179, 48, 48);
-    color: #c5c1c1;
+  width: 6rem;
+  background-color: var(--yellow);
+  color: var(--primary-color);
 }
 
 .logout:hover {
-    background-color: #f00;
-    color: #fff;
+  background-color: var(--secondar-color);
+  color: var(--white);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 6rem;
+  height: 100vh;
+}
+
+.wrapper h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.wrapper p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: var(--yellow);
+}
+
+.logo small {
+  font-size: 1rem;
+  color: var(--secondar-color);
+  font-weight: normal;
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.destroy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+}
+
+.start-planning {
+  background-color: var(--primary-color);
+  color: var(--white);
+  margin-top: 3rem;
 }
