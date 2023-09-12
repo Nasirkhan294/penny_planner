@@ -134,3 +134,80 @@ header {
   color: var(--white);
   margin-top: 3rem;
 }
+
+.start-planning:hover {
+  background-color: var(--secondar-color);
+  color: var(--primary-color);
+}
+
+.form-container {
+  width: 80vw;
+  margin: 3rem auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="number"],
+.field textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.actions input[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all ease 0.8s;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: var(--secondar-color);
+  color: var(--primary-color);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  font-weight: 700;
+}

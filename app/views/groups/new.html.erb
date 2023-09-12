@@ -1,4 +1,5 @@
-<h1>Create a New Group</h1>
+<div class="form-container">
+<h2>Create a New Category</h2>
 
 <%= form_with model: @group, url: groups_path, method: :post, local: true, scope: :group do |form| %>
     <div class="field">
@@ -15,6 +16,7 @@
     <%= form.submit "Create Category" %>
   </div>
 <% end %>
-<div class="back-to-group">
+<div class="links">
   <%= link_to "Back to Categories", groups_path %>
+</div>
 </div>
