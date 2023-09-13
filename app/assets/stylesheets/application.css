@@ -31,6 +31,17 @@ header {
   align-items: center;
 }
 
+h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+p {
+  line-height: 2;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -73,6 +84,20 @@ header {
 
 .logout:hover {
   background-color: var(--secondar-color);
+  color: var(--white);
+}
+
+.remove-btn {
+  background-color: var(--secondar-color);
+  color: var(--primary-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all ease 0.8s;
+}
+
+.remove-btn:hover {
+  background-color: var(--primary-color);
   color: var(--white);
 }
 
@@ -129,13 +154,19 @@ header {
   width: 90vw;
 }
 
-.start-planning {
+.start-planning,
+.btn-category {
   background-color: var(--primary-color);
   color: var(--white);
   margin-top: 3rem;
 }
 
-.start-planning:hover {
+.btn-category {
+  margin: 1rem auto;
+}
+
+.start-planning:hover,
+.btn-category:hover {
   background-color: var(--secondar-color);
   color: var(--primary-color);
 }
@@ -210,4 +241,20 @@ header {
   flex-direction: column;
   margin-top: 1rem;
   font-weight: 700;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0.5rem;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+}
+
+.col img {
+  width: 5rem;
 }

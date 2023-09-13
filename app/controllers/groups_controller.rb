@@ -14,8 +14,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @group = @user.groups.build(group_params)
+    @group = current_user.groups.build(group_params)
 
     respond_to do |format|
       format.html do
@@ -39,6 +38,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :image)
   end
 end
