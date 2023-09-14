@@ -1,37 +1,10 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1>📖 Recipe App</h>
+  <h1>📖 Penny Planner</h>
 </div>
 
-<div align="center">
-  <img src="./app/assets/images/recipe_erd_2_members.png" alt="screenshot"/>
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
-# 📗 Table of Contents
-
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [:question: FAQ](#faq)
-- [📝 License](#license)
-
-<!-- PROJECT DESCRIPTION -->
-
-# 📖 Penny Planner <a name="about-project"></a>
-
-**Penny Planner:** Penny Planner is a powerful personal finance and budgeting application designed to help individuals take control of their financial lives. This open-source project aims to provide users with a user-friendly and feature-rich tool to manage their income, expenses, savings, and investments seamlessly.. 📚
+ Penny Planner is a powerful personal finance and budgeting application designed to help individuals take control of their financial lives. This open-source project aims to provide users with a user-friendly and feature-rich tool to manage their income, expenses, savings, and investments seamlessly.. 📚
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -51,12 +24,6 @@
 - [x] **Create or Remove category item**
 - [x] **Create or Remove transaction item**
 - [x] **Validation & Unit Tests**
-- [x] **Controllers**
-- [x] **Views**
-- [x] **Add Forms**
-- [x] **Capybara tests**
-- [x] **Add devise**
-- [x] **Add authorization**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,7 +104,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-I would like to express my sincere gratitude to [Gregoire Vella](https://www.behance.net/gregoirevella) for this design and to all my Microverse partners who helped me build this project. I could not have done it without your support and encouragement.
+Please support this project and be a part of something meaningful and impactful. Your contribution can make a significant difference and help us achieve our goals faster.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,7 +112,7 @@ I would like to express my sincere gratitude to [Gregoire Vella](https://www.beh
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Grateful to all for inspiring codebase, your dedication and creativity made a lasting impact on our success. Thank you!
+I would like to express my sincere gratitude to [Gregoire Vella](https://www.behance.net/gregoirevella) for this design and to all my Microverse partners who helped me build this project. I could not have done it without your support and encouragement.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
