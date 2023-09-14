@@ -26,11 +26,4 @@ RSpec.feature 'Categories', type: :feature do
     expect(page).to have_content('Test Category')
     expect(page).to have_link('Remove')
   end
-  scenario 'add new transaction' do
-    visit groups_path
-    click_link 'Add a new category'
-    fill_in 'Name', with: 'Test Category'
-    attach_file('Image', Rails.root.join('app/assets/images/groceries.jpg'))
-    click_button 'Create Category'
-  end
 end
