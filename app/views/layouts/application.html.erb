@@ -15,12 +15,12 @@
       <div class="container">
         <% if user_signed_in? %>
           <div class="destroy">
+            <h2 class="logo">Penny<small>Planner</small></h2>
             <%= link_to 'Logout', destroy_user_session_path, class: "btn logout", data: { turbo_method: :delete } %>
           </div>
         <% else %>
           <div class=register">
-            <%= link_to 'Login', new_user_session_path, class: "btn login" %>
-            <%= link_to 'Sign-up', new_user_registration_path, class: "btn sign-up" %>
+           <h2 class="logo">Penny<small>Planner</small></h2>
           </div>
         <% end %>
       </div>

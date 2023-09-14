@@ -1,0 +1,16 @@
+<div class="category-wrapper">
+  <h4>Transaction</h4>
+  <div class="total-amount">
+    <h4>Total Amount:</h4>
+    <p>$<%= number_with_precision(@group.total_amount, precision: 2) %></p>
+  </div>
+
+  <div class="img-wrapper">
+    <%image_tag @group.image, class: 'img' %>
+    <p><%= @group.name %></p>
+  </div>
+</div>
+
+<div>
+  <%= link_to 'Add a new transaction', new_expense_path, class: "btn expense" %>
+</div>

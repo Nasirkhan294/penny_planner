@@ -1,0 +1,27 @@
+<div class="form-container">
+<h2>Create a New Expense</h2>
+
+<%= form_with model: @expense, url: expenses_path, method: :post, local: true, scope: :expense do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name,  required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :amount %>
+      <%= form.number_field :amount,  required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :group_id, 'Select Group' %>
+      <%= form.collection_select :group_id, @user.groups, :id, :name, include_blank: true %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create Expense" %>
+    </div>
+<% end %>
+<div class="links">
+  <%= link_to "Back to Expenses", expenses_path %>
+</div>
+</div>
