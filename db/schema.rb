@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_913_061_524) do
+ActiveRecord::Schema[7.0].define(version: 20_220_419_125_704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -44,18 +44,22 @@ ActiveRecord::Schema[7.0].define(version: 20_230_913_061_524) do
   end
 
   create_table 'expenses', force: :cascade do |t|
-    t.integer 'author_id'
     t.string 'name'
-    t.decimal 'amount'
-    t.bigint 'group_id', null: false
+    t.decimal 'amount', precision: 10, scale: 2
+    t.bigint 'author_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['group_id'], name: 'index_expenses_on_group_id'
+    t.index ['author_id'], name: 'index_expenses_on_author_id'
+  end
+
+  create_table 'expenses_groups', id: false, force: :cascade do |t|
+    t.bigint 'group_id', null: false
+    t.bigint 'expense_id', null: false
+    t.index %w[group_id expense_id], name: 'index_expenses_groups_on_group_id_and_expense_id'
   end
 
   create_table 'groups', force: :cascade do |t|
-    t.string 'name'
-    t.string 'image'
+    t.string 'name', null: false
     t.bigint 'user_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -63,24 +67,21 @@ ActiveRecord::Schema[7.0].define(version: 20_230_913_061_524) do
   end
 
   create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
     t.string 'reset_password_token'
     t.datetime 'reset_password_sent_at'
     t.datetime 'remember_created_at'
-    t.string 'confirmation_token'
-    t.datetime 'confirmed_at'
-    t.datetime 'confirmation_sent_at'
-    t.string 'unconfirmed_email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'name'
+    t.string 'role', default: 'user'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
   add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'active_storage_variant_records', 'active_storage_blobs', column: 'blob_id'
-  add_foreign_key 'expenses', 'groups'
+  add_foreign_key 'expenses', 'users', column: 'author_id'
   add_foreign_key 'groups', 'users'
 end

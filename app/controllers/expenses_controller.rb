@@ -1,11 +1,8 @@
 class ExpensesController < ApplicationController
-  def index
-    @user = current_user
-    @expenses = @user.expenses.includes(:group)
-  end
+  load_and_authorize_resource
 
-  def show
-    @expense = Expense.find(params[:id])
+  def index
+    redirect_to groups_url
   end
 
   def new
@@ -13,31 +10,26 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @expense = @user.expenses.build(expense_params)
+    @expense = Expense.new(expense_params)
+    @expense.author = current_user
 
     respond_to do |format|
-      format.html do
-        if @expense.save
-          redirect_to expenses_path, notice: 'Expenses created successfully.'
-        else
-          render :new
-          flash.now[:alert] = 'Expense could not be added. Please try again.'
-        end
+      if @expense.save
+        format.html { redirect_to expenses_path, notice: 'Transaction was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @user = current_user
     @expense = Expense.find(params[:id])
     @expense.destroy
-    redirect_to expenses_path, notice: 'Expense deleted successfully.'
+    flash[:success] = 'Transaction was successfully deleted.'
+    redirect_to root_path
   end
 
-  private
-
   def expense_params
-    params.require(:expense).permit(:author_id, :name, :amount, :group_id)
+    params.require(:expense).permit(:name, :amount, :group_ids)
   end
 end
