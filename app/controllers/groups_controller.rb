@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
           redirect_to groups_path notice: 'Category created successfully.'
         else
           render :new
-          flash.now[:alert] = 'Group could not be added. Please try again.'
+          flash.now[:alert] = 'Category could not be added. Please try again.'
         end
       end
     end

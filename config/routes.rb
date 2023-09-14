@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#index'
 
-  resources :groups, only: %i[index show new create destroy]
-  resources :expenses, only: %i[index show new create destroy]
+  unauthenticated :user do
+    root to: 'users#index'
+  end
+
+  authenticated :user do
+    root 'groups#index', as: :authenticated_root
+  end
+
+  resources :groups
+  resources :expenses
 end

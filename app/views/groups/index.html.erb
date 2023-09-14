@@ -16,9 +16,9 @@
             <% end %>
           </div>
         </div>
-        <%= link_to 'Add a new category', new_group_path, class: "btn btn-category" %>
-    <% end %>
+      <% end %>
+      <%= link_to 'Add a new category', new_group_path, class: "btn btn-category" %>
 <% else %>
-  <p>There is no category added!!!</p>
+  <p class="no-category">There is no category added!!!</p>
   <%= link_to 'Add a new category', new_group_path, class: "btn btn-category" %>
 <% end %>
