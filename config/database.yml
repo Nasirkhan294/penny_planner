@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: penny_planner_production
-  username: penny_planner
-  password: <%= ENV["PENNY_PLANNER_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
