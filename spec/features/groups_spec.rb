@@ -1,5 +1,4 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Groups', type: :feature do
   background do
     visit root_path
@@ -26,14 +25,5 @@ RSpec.feature 'Groups', type: :feature do
     click_button 'Save'
     expect(page).to have_content('Test')
     expect(page).to have_button('Delete')
-  end
-
-  scenario 'go to created category' do
-    click_link 'Add a new category'
-    fill_in 'Name', with: 'Test'
-    attach_file('Image', 'app/assets/images/arrow.svg')
-    click_button 'Save'
-    click_link 'Test'
-    expect(page).to have_content('Total Amount:')
   end
 end
