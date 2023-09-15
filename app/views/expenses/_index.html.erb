@@ -1,14 +1,3 @@
-<div class="expense-container">
-  <% @expenses.each do |expense| %>
-    <div class="expense-details">
-      <div class="expense-row">
-        <div class="expense-col">
-          <h4><%= expense.name %></h4>
-          <small>$<%= expense.amount.round(2) %></small>
-        </div>
-        <%= link_to "Remove", expense_path(expense), class: "remove-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this transaction" } %>
-      </div>
-      <small><%= expense.created_at.strftime("%d %b %Y") %></small>
-    </div>
-  <% end %>
+<div class="container">
+<%= render @expenses %>
 </div>

@@ -1,21 +1,20 @@
-<div class="category-wrapper">
-  <h4>Transaction</h4>
-  <div class="total-amount">
-    <p>Total Amount:</p>
-    <p>$<%= number_with_precision(@group.total_amount, precision: 2) %></p>
+<div class="containers">
+  <h5 class='text-center display-6'>TRANSACTION</h5>
+  <div class="container p-4 pd-0 d-flex justify-content-between">
+		<h5 class="fw-bold">Total Amount:</h5>
+		<p class="fw-bold">$<%= @group.total_amount.round(2) %></p>
+  </div>
+  <div class="p-4 pt-0">
+    <%=image_tag @group.image, class: 'img-thumbnail ratio ratio-21x9' %>
+    <p class="text-muted text-center pt-2"><%= @group.name %></p>
+  </div>
+</div>
+  <div class="divider mb-2"></div>
+	  <%= render 'expenses/index', locals: { expenses: @expenses } %>
   </div>
 
-  <div class="img-wrapper">
-    <%= image_tag @group.image %>
-    <p class="caption"><%= @group.name %></p>
+<footer class="footer">
+  <div class="d-grid gap-2">
+    <%= link_to "Add new transaction", new_expense_path, class: "btn btn-success border-radius-none" %>
   </div>
-</div>
-
-<div class="transactions">
-  <%= render 'expenses/index', locals: {expenses: @expenses} %>
-</div>
-
-<div class="btn-wrapper">
-  <%= link_to 'Add a new transaction', new_expense_path, class: "btn btn-transaction" %>
-  <%= link_to "Back to Categories", groups_path, class: "btn category" %>
-</div>
+</footer>

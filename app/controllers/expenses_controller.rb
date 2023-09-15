@@ -30,6 +30,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :amount, :group_ids)
+    params.require(:expense).permit(:name, :amount, group_ids: [])
   end
 end

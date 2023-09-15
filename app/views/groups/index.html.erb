@@ -1,24 +1,10 @@
-<h1>Categories</h1>
-<% if @groups.any? %>
-    <% @groups.each do |group| %>
-        <div class="row">
-          <div class="col">
-            <%= image_tag group.image %>
-          </div>
-          <div class="col">
-            <h5><%= link_to group.name, group_path(group) %></h5>
-            <p><small><%= group.created_at.strftime("%d-%b-%Y") %></small></p>
-          </div>
-          <div class="col">
-            <p> $<%= group.expenses.sum(:amount) %></p>
-            <%if can? :destroy, group %>
-              <%= link_to 'Remove', group_path(group), class: "remove-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this group?" } %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-      <%= link_to 'Add a new category', new_group_path, class: "btn btn-category" %>
-<% else %>
-  <p class="no-category">There is no category added!!!</p>
-  <%= link_to 'Add a new category', new_group_path, class: "btn btn-category" %>
-<% end %>
+
+<div class="container">
+  <%= render 'categories' %>
+</div>
+
+<footer class="footer">
+  <div class="d-grid gap-2">
+    <%= link_to "Add a new category", new_group_path, class: "btn btn-success border-radius-none" %>
+  </div>
+</footer>
