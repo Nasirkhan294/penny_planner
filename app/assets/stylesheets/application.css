@@ -56,12 +56,9 @@ img {
 }
 
 footer {
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  overflow: visible;
-  z-index: 99;
   height: 55px;
 }
 
