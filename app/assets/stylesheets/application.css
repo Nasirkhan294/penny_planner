@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
   --primary-color: #351d77;
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--body);
 }
 
@@ -363,4 +363,28 @@ p {
   margin-top: 1rem;
   font-weight: 700;
   color: var(--primary-color);
+}
+
+@media only screen and (min-width: 1200px) {
+  .row {
+    margin: 1rem 18rem;
+  }
+
+  .btn-category {
+    width: 12rem;
+  }
+
+  .form-container {
+    width: 40vw;
+  }
+
+  .total-amount,
+  .img-wrapper,
+  .expense-details {
+    width: 25rem;
+  }
+
+  .expense-container {
+    margin-top: 1rem;
+  }
 }
