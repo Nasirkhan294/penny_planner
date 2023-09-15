@@ -3,10 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  has_many :bills, foreign_key: 'author_id'
   has_many :groups, dependent: :destroy
-  has_many :expenses, dependent: :destroy
 
-  validates :name, :email, presence: true, length: { maximum: 255 }
-  validates :email, uniqueness: true
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, presence: true
 end

@@ -1,1 +1,6 @@
-<%= render 'form', group: @group %>
+<% @title = 'New group' %>
+<%= render "form", group: @group %>
+<br>
+<div class="text-center">
+  <%= link_to "Back to groups", groups_path %>
+</div>

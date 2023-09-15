@@ -1,20 +1,18 @@
-<div class="containers">
-  <h5 class='text-center display-6'>TRANSACTION</h5>
-  <div class="container p-4 pd-0 d-flex justify-content-between">
-		<h5 class="fw-bold">Total Amount:</h5>
-		<p class="fw-bold">$<%= @group.total_amount.round(2) %></p>
-  </div>
-  <div class="p-4 pt-0">
-    <%=image_tag @group.image, class: 'img-thumbnail ratio ratio-21x9' %>
-    <p class="text-muted text-center pt-2"><%= @group.name %></p>
-  </div>
+<p style="color: green"><%= notice %></p>
+<div class="px-3 d-flex justify-content-end mb-3">
+  Total: $<%= @group.bills.inject(0){ |sum, bill| sum + bill.amount.to_i } %>
 </div>
-  <div class="divider mb-2"></div>
-	  <%= render 'expenses/index', locals: { expenses: @expenses } %>
-  </div>
-
-<footer class="footer">
-  <div class="d-grid gap-2">
-    <%= link_to "Add new transaction", new_expense_path, class: "btn btn-success border-radius-none" %>
-  </div>
-</footer>
+<%= render @group %>
+<div class="container-fluid d-flex mb-3">
+  <% if can? :update, @group %>
+    <%= link_to "Edit this group", edit_group_path(@group), class: 'mx-1' %> |
+  <% end %>
+  <%= link_to "Back to groups", groups_path, class: 'mx-1' %>
+  <% if can? :destroy, @group %>
+    | <%= button_to "Delete", @group, method: :delete, class: 'mx-1 border-0 text-primary' %>
+  <% end %>
+</div>
+<%= render 'bill', bills: @group.bills %>
+<div class="bg-green p-3 w-100 position-fixed bottom-0">
+  <%= link_to "Add a New bill", new_group_bill_path(@group.id), class: 'btn bg-green fw-bold col-12 text-uppercase' %>
+</div>

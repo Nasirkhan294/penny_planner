@@ -1,42 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before(:each) do
-    @user = User.new(name: 'Nasir', email: 'nasir@gmail.com', password: 'password',
-                     password_confirmation: 'password')
-
-    @user.save
-
-    @group = Group.new(name: 'Group one')
-
-    @group.save
-
-    @expense = Expense.new(name: 'Expense one', amount: 100)
-
-    @expense.save
+  subject do
+    described_class.new(name: 'Felix', password: 'some_password', email: 'felix@doe.com',
+                        bio: 'Software developer')
   end
 
-  it 'should be valid' do
-    expect(@user).to be_valid
-  end
+  describe 'Validations' do
+    it 'is valid with valid attributes' do
+      expect(subject).to be_valid
+    end
 
-  it 'should have a name' do
-    @user.name
-    expect(@user.name).to eq('Nasir')
-  end
+    it 'is not valid without a password' do
+      subject.password = nil
+      expect(subject).to_not be_valid
+    end
 
-  it 'should have an email' do
-    @user.email
-    expect(@user.email).to eq('nasir@gmail.com')
-  end
+    it 'is not valid without an email' do
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end
 
-  it 'should have a password' do
-    @user.password
-    expect(@user.password).to eq('password')
-  end
-
-  it 'should have a password_confirmation' do
-    @user.password_confirmation
-    expect(@user.password_confirmation).to eq('password')
+    it 'is not valid without an name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
   end
 end

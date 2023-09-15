@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
+  root 'landingpage#index'
   devise_for :users
-
-  unauthenticated :user do
-    root to: 'users#index'
+  resources :groups do
+    resources :bills
   end
-
-  authenticated :user do
-    root 'groups#index', as: :authenticated_root
-  end
-
-  resources :groups
-  resources :expenses
+  resources :users
 end

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.7', '>= 7.0.7.2'
+gem 'rails', '~> 7.0.8'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -49,9 +49,9 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.0'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -65,16 +65,17 @@ group :development do
   # gem "spring"
 end
 
-# Rubocop Gem
-gem 'rubocop', '>= 1.0', '< 2.0'
-# Devise gem
-gem 'devise'
-# CanCanCan gem
-gem 'cancancan'
-
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'devise'
+
+gem 'carrierwave'
+
+gem 'cancancan'

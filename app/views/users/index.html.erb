@@ -1,21 +1,14 @@
-<div class="background">
+<p style="color: green"><%= notice %></p>
 
+<h1>Users</h1>
 
-      <div class="container">
-        <div>
-          <h1 class="title text-center display-6 text-muted">BUDGE<small style="color: #24a0ed;">TIFY</small></h1>
-        </div>
-        
-        <div class="row gap-3 padding centered">
-          <%= link_to 'Log in', user_session_path, class: 'btn btn-info text-nowrap row'%>
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-light text-nowrap row'%>
-        </div>
-      
-    </div>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+  <% end %>
 </div>
+
+<%= link_to "New user", new_user_path %>
