@@ -32,7 +32,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Project Demo]('https://penny-planner.onrender.com')
+- [Live Project Demo](https://penny-planner.onrender.com)
 
 ## 🚀 Project Presentation <a name="live-demo"></a>
 
