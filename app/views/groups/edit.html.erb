@@ -1,7 +1,9 @@
+<div class="form-container">
 <% @title = 'Update Group' %>
 <%= render "form", group: @group %>
 <br>
-<div class="px-3">
-  <%= link_to "Show this group", @group %> |
+<div class="buttons">
+  <%= link_to "Show this group", @group %>
   <%= link_to "Back to groups", groups_path %>
+</div>
 </div>

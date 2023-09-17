@@ -34,10 +34,6 @@
 
 - [Live Project Demo](https://penny-planner.onrender.com)
 
-## 🚀 Project Presentation <a name="live-demo"></a>
-
-- [Project Presentation](https://www.loom.com/share/ac8c4d2025354591905feb1cb5643c44?sid=49a0393f-5128-43f9-b873-7e682ae32e79)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

@@ -1,12 +1,13 @@
 <% @title = bill.name %>
-<div class="container-flud mx-3 px-2 bg-white border-bottom">
-  <p class="py-2">Transactionº<%= bill.created_at.to_time.to_i %> <br/>
-    <span class="fa fa-calendar"></span> <span class="mx-1"><%= bill.created_at %></span>
-  </p>
+<div class="bills">
+<div class="bill-card">
+  <p class="bill-transaction">Transactionº<%= bill.created_at.to_time.to_i %></p>
+  <span class="fa fa-calendar"> <%= bill.created_at %></span>
+  <div class="bill-payment-info">
+    <p class="bill-payment">
+      <strong>payment:</strong>
+      $<%= bill.amount %>
+    </p>
+  </div>
 </div>
-<div class="container-flud mx-3 px-2 bg-white border-bottom">
-  <p class="py-2 m-0 d-flex justify-content-between">
-    <strong>payment:</strong>
-    $<%= bill.amount %>
-  </p>
 </div>

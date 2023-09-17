@@ -1,28 +1,32 @@
+<div class="form-container">
 <% @title = 'Sign up' %>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+<h2 class="heading">Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-form' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field form-group mb-3 mt-3 px-3">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control', placeholder: 'Enter name' %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Enter name' %>
   </div>
-  <div class="field form-group mb-3 px-3">
-    <%= f.text_field :bio, autofocus: true, autocomplete: "bio", class: 'form-control', placeholder: 'Enter quote' %>
+  <div class="field">
+    <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: 'Add your interest' %>
   </div>
-  <div class="field form-group mb-3 px-3">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Enter email' %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter email' %>
   </div>
-  <div class="field form-group mb-3 px-3">
+  <div class="field">
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Enter password' %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Enter password' %>
   </div>
-  <div class="field form-group mb-3 px-3">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Password confirmation' %>
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password confirmation' %>
   </div>
-  <div class="actions mb-3 px-3">
-    <%= f.submit "Sign up", class: 'btn btn-primary btn-sm bg-blue col-12' %>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
   </div>
 <% end %>
-<div class="container text-center">
+<div class="links">
   <%= render "devise/shared/links" %>
+</div>
 </div>

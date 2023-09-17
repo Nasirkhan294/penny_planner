@@ -4,7 +4,7 @@
   <% @bills.each do |bill| %>
     <%= render bill %>
     <p>
-      <%= link_to "Show this bill", group_bill_path(bill.group_id, bill)%>
+      <%= link_to "Show bill", group_bill_path(bill.group_id, bill)%>
     </p>
   <% end %>
 </div>

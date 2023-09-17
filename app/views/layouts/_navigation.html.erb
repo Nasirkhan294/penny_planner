@@ -1,38 +1,35 @@
-<header class="bg-blue px-3 py-2">
-  <nav class="d-flex justify-content-between">
+<header class="header">
+  <nav class="navbar">
     <ul>
       <li>
         <% if params[:action] == 'index' && params[:controller] == 'landingpage' || params[:action] == 'index' && params[:controller] == 'groups' %>
           <span class="fa fa-bars toggle-menu"></span>
           <ul class="mobile-menu">
-            <li class="d-flex justify-content-end">
-              <span class="fa fa-close toggle-menu"></span>
-            </li>
             <% if current_user %>
               <li>
                 <%= link_to groups_path do %>
-                  <span class="fa fa-home"></span> Home
+                  <p class="fa fa-home"><span>Home</span></p>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path do %>
-                  <span class="fa fa-sign-out"></span> Sign Out
+                  <p class="fa fa-sign-out"><span>Sign Out</span></p>
                 <% end %>
               </li>
             <% else %>
               <li>
                 <%= link_to root_path do %>
-                  <span class="fa fa-home"></span> Home
+                  <p class="fa fa-home"><span>Home</span></p>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_session_path do %>
-                  <span class="fa fa-sign-in"></span> Sign In
+                  <p class="fa fa-sign-in"><span>Sign In</span></p>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_registration_path do %>
-                  <span class="fa fa-user-plus"></span> Sign Up
+                  <p class="fa fa-user-plus"><span>Sign Up</span></p>
                 <% end %>
               </li>
             <% end %>
@@ -44,7 +41,9 @@
         <% end %>
       </li>
     </ul>
-    <div class="text-uppercase"><%= @title %></div>
+    <div class="text-capitalize">
+      <h2 class="title"><%= @title %><small><%= @subtitle %></small></h2>
+    </div>
     <ul>
       <li> <span class="fa fa-search"></span></li>
     </ul>

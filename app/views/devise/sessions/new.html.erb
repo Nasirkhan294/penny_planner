@@ -1,23 +1,24 @@
-<% @title = 'Login' %>
-<div class="container mt-3">
+<div class="form-container">
+  <% @title = 'Login' %>
+  <h2 class="heading">Login</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field form-group mb-3 mt-3 px-3">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Enter email' %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter email' %>
     </div>
-    <div class="field form-group mb-3 mt-3 px-3">
-      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Enter password' %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Enter password' %>
     </div>
     <% if devise_mapping.rememberable? %>
-      <div class="field form-group px-3">
+      <div class="field">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
-    <div class="actions form-group mb-3 mt-3 px-3">
-      <%= f.submit "Log in", class: 'btn btn-primary btn-sm bg-blue col-12' %>
+    <div class="actions">
+      <%= f.submit "Login" %>
     </div>
   <% end %>
-</div>
-<div class="container text-center">
-  <%= render "devise/shared/links" %>
+  <div class="links">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

@@ -3,8 +3,7 @@
 <%= render @group_bill %>
 
 <div>
-  <%= link_to "Edit this group bill", edit_group_bill_path(@group_bill) %> |
-  <%= link_to "Back to group bills", group_bills_path %>
-
-  <%= button_to "Destroy this group bill", @group_bill, method: :delete %>
+  <%= link_to "Edit", edit_group_bill_path(@group_bill) %> |
+  <%= link_to "Back to bills", group_bills_path %>
+  <%= button_to "Destroy bill", @group_bill, method: :delete %>
 </div>
